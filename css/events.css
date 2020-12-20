@@ -1,0 +1,67 @@
+.event {
+    padding: 2% 0;
+    border-bottom: 1px solid #7E7E7E ;
+}
+
+.venue {
+    margin-left: 2%;
+    font-style: italic;
+    color: #049372;
+}
+.sold-out {
+    color: #EF4836;
+    font-weight: bold;
+}
+input[name^='event-'] {
+    width: 40%;
+}
+
+.message {
+    margin-top: 2px;
+    display: block;
+    padding: 2%;
+}
+
+.message.info {
+    border: 2px solid #1E8BC3;
+    color: #1E8BC3;
+}
+
+.message.success {
+    border: 2px solid #2E8B57;
+    color: #2E8B57;
+}
+
+.message.error {
+    border: 2px solid #DC2A2A;
+    color: #DC2A2A;
+}
+
+.row {
+    max-width: 124rem;
+    margin: 0 auto;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: space-between;
+}
+
+#main div {
+    clear: both;
+}
+
+.row [class^="col-"]:not(:last-child) {
+    margin-right: 3rem;
+}
+
+.row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 3rem) / 3) + 10rem);
+    margin-right: 3rem;
+}
+
+.row .col-1-of-3 {
+    width: calc((100% - 2 * 3rem) / 3);
+}
+
+

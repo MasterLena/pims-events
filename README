@@ -1,0 +1,32 @@
+=== Pims Events ===
+Plugin Name: Pims Events - Show events fetched from https://api.pims.io/
+Version: 1.0.0
+Author: Milena Bimbasic
+Author URI: https://premium.wpmudev.org/
+Requires PHP: 7.4
+License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+The Pims Events plugin filters front page content and shows all events and their venues, information fetched from https://api.pims.io/
+
+It also creates shortcode [pims-events] which prints:
+    * link to homepage called Home where all events are listed
+    * previous and next lists of events
+    * list consisting of information about events and venues:
+        * Event Name
+        * Event date and time in format 'l jS \of F Y \a\t h:i:s A'
+        * Event price and currency
+        * Venue name, city, and country
+        * SOLD OUT message if the event is sold out
+    And filters:
+        * Number of events per page (Num of events per page)
+        * date rage ( From Date - To Date )
+        * sort by
+
+    Also if a user is logged in this template will have a save button below every event which when clicked saves that event and its info ( displayed event info + id and venue_id, and displayed venue info + id ) for each user.
+
+Plugin on activation creates three custom tables named:
+    * {$wpdb->prefix}pims_events : Which have all displayed event info + event unique id ("id") and "venue_id" which references to unique "id" in venues table
+    * {$wpdb->prefix}pims_venues : Which have all displayed venues info + venue unique id ("id")
+    * {$wpdb->prefix}pims_user_event : Which is join table between users and events. It has many to many relation between users and events.
+
+Plugin on deactivation deletes all created tables if they exist.
